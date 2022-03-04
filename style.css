@@ -3,9 +3,10 @@
   --light-pink: #f0b9dd;
   --lavender: #c7b9ff;
   --deep-pink: #f04c86;
+  --red: #ff0000;
+  --dark-red: #c91c1c;
   --raisin: #2b283a;
   --white: #fff;
-  --dark-red: ffae19;
 }
 
 html,
@@ -15,7 +16,7 @@ body {
 }
 
 .flex {
-  background: url("images/heart.png") no-repeat center;
+  background: var(--lavender) url("images/heart.png") no-repeat center;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,21 +28,20 @@ body {
 }
 
 body {
-  background-color: var(--lavender);
   height: 100vh;
   font-family: "Karla", sans-serif;
 }
 
 button {
   font-family: inherit;
-  font-size: 1.2rem;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
-    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
-  border-radius: 5px;
+  font-size: 1.25rem;
   border: none;
-  padding: 1em 1.5em;
-  color: var(--raisin);
-  background: var(--white);
+  color: var(--white);
+  background: var(--dark-red);
+  padding: 1.15em 0.4em;
+  position: relative;
+  top: -15.5%;
+  text-transform: uppercase;
 }
 
 button:hover,
@@ -52,20 +52,20 @@ button:focus {
 
 /* heart styles */
 .heart {
-  background-color: red;
+  background: var(--dark-red);
   display: inline-block;
   height: 100px;
-  position: relative;
-  top: 0;
-  transform: rotate(-45deg);
   width: 100px;
+  position: relative;
+  top: 8%;
+  transform: rotate(-45deg);
 }
 
 .heart:before,
 .heart:after {
   content: "";
   position: absolute;
-  background-color: red;
+  background: var(--dark-red);
   border-radius: 50%;
   height: 100px;
   width: 100px;
@@ -74,9 +74,12 @@ button:focus {
 .heart:before {
   top: -50px;
   left: 0;
+  border-top: 2px solid var(--red);
+  border-right: 2px solid var(--red);
 }
 
 .heart:after {
   left: 50px;
   top: 0;
+  border-right: 2px solid var(--red);
 }
