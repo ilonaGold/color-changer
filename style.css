@@ -13,6 +13,7 @@ html,
 body {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 .flex {
@@ -24,30 +25,12 @@ body {
 }
 
 .flex * {
-  margin: 3em;
+  margin: 1em;
 }
 
 body {
   height: 100vh;
   font-family: "Karla", sans-serif;
-}
-
-button {
-  font-family: inherit;
-  font-size: 1.25rem;
-  border: none;
-  color: var(--white);
-  background: var(--dark-red);
-  padding: 1.15em 0.4em;
-  position: relative;
-  top: -15.5%;
-  text-transform: uppercase;
-}
-
-button:hover,
-button:focus {
-  transform: scale(1.02);
-  cursor: pointer;
 }
 
 /* heart styles */
@@ -57,7 +40,6 @@ button:focus {
   height: 100px;
   width: 100px;
   position: relative;
-  top: 8%;
   transform: rotate(-45deg);
 }
 
@@ -69,6 +51,7 @@ button:focus {
   border-radius: 50%;
   height: 100px;
   width: 100px;
+  z-index: -1;
 }
 
 .heart:before {
@@ -82,4 +65,24 @@ button:focus {
   left: 50px;
   top: 0;
   border-right: 2px solid var(--red);
+}
+
+button {
+  font-family: inherit;
+  font-size: 1.25rem;
+  border: none;
+  color: var(--white);
+  background: var(--dark-red);
+  padding: 1.15em 0.4em;
+  text-transform: uppercase;
+  transform: rotate(45deg);
+  position: absolute;
+  top: -32%;
+  z-index: 1;
+}
+
+button:hover,
+button:focus {
+  transform: rotate(45deg) scale(1.02);
+  cursor: pointer;
 }
